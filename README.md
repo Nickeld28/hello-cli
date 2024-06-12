@@ -10,6 +10,12 @@ This is a tutorial pet-project to learn how to create your own
 git clone <project_URL>
 ```
 
+## Onen project directory
+
+```shell
+cd hello-cli
+```
+
 ## Install packages
 
 ```shell
