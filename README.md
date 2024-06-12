@@ -18,11 +18,27 @@ cd hello-cli
 
 ## Install packages
 
+### Linux
+
 ```shell
-pip install -U -r requirements.txt
+python3 -m pip install -U -r requirements.txt
+```
+
+### Windows
+
+```shell
+python -m pip install -U -r requirements.txt
 ```
 
 ## Build program
+
+### Linux
+
+```shell
+python3 -m PyInstaller hello-cli.py
+```
+
+### Windows
 
 ```shell
 pyinstaller hello-cli.py
@@ -30,9 +46,16 @@ pyinstaller hello-cli.py
 
 ## Install program
 
+### Linux
+
+```shell
+cd dist/hello-cli
+cp hello-cli ~/.local/bin/; cp -R _internal/ ~/.local/bin/_internal/
+```
+
 ### Windows
 
-Replace directory `\hello-cli` from `\dist` to `C:\Users\<username>` or another path in your OS.
+Copy directory `\hello-cli` from `\dist` to `C:\Users\<username>` or another path in your OS.
 
 Add path `C:\Users\<username>\hello-cli` (or another path in your case) to PATH in Windows environment variables.
 
@@ -41,11 +64,11 @@ Add path `C:\Users\<username>\hello-cli` (or another path in your case) to PATH 
 In any place open your terminal and write a command:
 
 ```shell
-C:\>hello-cli
+hello-cli
 12-Jun-24 16:53:47 - INFO - Hello World!
 ```
 
 ```shell
-C:\>hello-cli User
+hello-cli User
 12-Jun-24 16:55:35 - INFO - Hello User!
 ```
