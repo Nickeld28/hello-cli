@@ -19,9 +19,15 @@ def main() -> None:
         epilog='epilog'
     )
 
-    parser.add_argument('name', default='World', help="name of whom to greet", type=str)
+    # Positional
+    parser.add_argument('name', nargs='?', default='World', help="name of whom to greet", type=str)
+
+    # Optional
     parser.add_argument('-v', '--verbose', action='store_true', help='enable verbose output')
     parser.add_argument('-d', '--debug', action='store_true', help='enable debug output')
+
+    # Unrecognized positional
+    parser.add_argument('unrecognized', nargs=argparse.REMAINDER, help='unrecognized args will be ignored')
 
     args = parser.parse_args()
     hello_message = f'Hello {args.name}!'
