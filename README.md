@@ -59,16 +59,34 @@ Copy directory `\hello-cli` from `\dist` to `C:\Users\<username>` or another pat
 
 Add path `C:\Users\<username>\hello-cli` (or another path in your case) to PATH in Windows environment variables.
 
+### Help
+
+```shell
+usage: hello-cli [options] [NAME]
+
+This program prints "Hello [NAME]".
+
+positional arguments:
+  name           name of whom to greet
+  unrecognized   unrecognized args will be ignored
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose  enable verbose output
+  -d, --debug    enable debug output
+```
+
 ## Using example
 
 In any place open your terminal and write a command:
 
 ```shell
 hello-cli
-12-Jun-24 16:53:47 - INFO - Hello World!
+Hello World!
 ```
 
 ```shell
 hello-cli User
-12-Jun-24 16:55:35 - INFO - Hello User!
+02-Jul-24 21:29:17 - DEBUG - Namespace(name='User', verbose=True, debug=True, unrecognized=[])
+02-Jul-24 21:29:17 - INFO - Hello User!
 ```
