@@ -11,7 +11,7 @@ logging.basicConfig(
 )
 
 
-def main() -> None:
+def get_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog='hello-cli',
         usage='%(prog)s [options] [NAME]',
@@ -28,8 +28,11 @@ def main() -> None:
 
     # Unrecognized positional
     parser.add_argument('unrecognized', nargs=argparse.REMAINDER, help='unrecognized args will be ignored')
+    return parser.parse_args()
 
-    args = parser.parse_args()
+
+def main() -> None:
+    args = get_args()
     hello_message = f'Hello {args.name}!'
 
     if args.debug:
